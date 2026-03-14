@@ -1,0 +1,22 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandavibansal/practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandavibansal/practice/issues"
+  },
+  "homepage": "https://github.com/mandavibansal/practice#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
