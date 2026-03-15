@@ -1,8 +1,12 @@
 const express = require('express');
 const users = require("./MOCK_DATA.json")
 const app = express();
+const fs = require('fs');
 
 const PORT =8000;
+
+//middleware
+app.use(express.urlencoded({extended:false}));
 //routes
 app.get('/api/users',(req,res)=>{
     return res.json(users);
@@ -24,10 +28,15 @@ app.get("/api/users/:id", (req,res) => {
 });
 
 app.post("/api/users",(req,res) => {
+    const body = req.body;
+    users.push({...body,id:users.length+1});
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+
     return res.json({status:"pending"});
+    });
 });
 
 app.patch("/api/users/:id", (req,res) => {
     return res.json({status:"pending"});
-});
+}); 
 app.listen(PORT ,() => console.log(`server is running on port: ${PORT}` ));
